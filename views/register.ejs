@@ -1,10 +1,11 @@
 <% include partials/header.ejs %>
 <h2 class="page-header">Register</h2>
 <% if (errors) { %>
-      <% for (var i=0; i<errors.lenght; i++) { %>
-        <div class="alert alert-danger"><%= error_msg %></div>
+      <% for (var i=0; i<errors.length; i++) { %>
+        <div class="alert alert-danger"><%= errors[i].msg %></div>
       <% } %>
 <% } %>
+
 <form method="post" action="/users/register">
    <div class="form-group">
     <label>Name</label>

@@ -7,7 +7,7 @@ var User = require('../models/user');
 
 // Register
 router.get('/register', function(req, res){
-	res.render('register');
+	res.render('register', {errors: []});
 });
 
 // Login
@@ -32,7 +32,7 @@ router.post('/register', function(req, res){
 	req.checkBody('password2', 'Passwords do not match').equals(req.body.password);
 
 	var errors = req.validationErrors();
-
+	console.log(errors);
 	if(errors){
 		res.render('register',{
 			errors:errors
