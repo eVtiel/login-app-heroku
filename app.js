@@ -11,6 +11,20 @@ var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
   
+// mongoose.connect('mongodb://username:password@host:port/database?options...');
+// mongoose.connect('mongodb://localhost:');
+// var remoteDb = "mongodb://heroku_10nwc463:gb7qdbrgls691ekomm192ktm8r@ds157078.mlab.com:57078/heroku_10nwc463";
+// var localDb = "mongodb://localhost/loginapp";
+
+// the following is pseudocode for connecting to 
+// different databases depending on environment
+// if (remote) {
+//   mongoose.connect(remoteDb); 
+// } else {
+
+// }
+console.log(process.env.MONGODB_URL);
+// mongoose.connect(localDb); 
 mongoose.connect("mongodb://heroku_10nwc463:gb7qdbrgls691ekomm192ktm8r@ds157078.mlab.com:57078/heroku_10nwc463"); 
 var db = mongoose.connection;
 
